@@ -17,27 +17,28 @@ namespace RichConsoleWriter
             Console.ReadLine();
         }
 
+        public static int beingPrinted = 1;
         static Random random = new Random();
         private static async void escreve()
         {
             for (int i = 0; i < 50; i++)
             {
                 int intRandom = random.Next(1000, 150000);
-                int nega = 0;
+                int negativo = 0;
                 await Task.Delay(intRandom);
                 lock (ConsoleWriter.ConsoleWriterLock)
                 {
                     //ConsoleWriter.WriteLine("");
-                    ConsoleWriter.WriteLine("[XXXX]Obra x", ConsoleColor.White);
+                    ConsoleWriter.WriteLine($"[{beingPrinted++.ToString("0000")}]Obra - Totais Calculados", ConsoleColor.White);
                     ConsoleWriter.Write("      Equipa..: ", ConsoleColor.DarkGray, true);
-                    nega = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(nega % 2==0?" ":"-")}{random.Next(1, 9999)},00", (nega % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
+                    negativo = random.Next(1, 3);
+                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
                     ConsoleWriter.Write("      Produtos: ", ConsoleColor.DarkGray, true);
-                    nega = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(nega % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (nega % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
+                    negativo = random.Next(1, 3);
+                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
                     ConsoleWriter.Write("      Mão Obra: ", ConsoleColor.DarkGray, true);
-                    nega = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(nega % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (nega % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
+                    negativo = random.Next(1, 3);
+                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
                 }
             }
         }
