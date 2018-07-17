@@ -7,6 +7,9 @@ namespace RichConsoleWriter
     {
         static void Main(string[] args)
         {
+            ConsoleWriter.Write("Rich", ConsoleColor.Blue)
+                         .Write("Console", ConsoleColor.Red)
+                         .WLine("Writer", ConsoleColor.Green, false);
 
             for (int i = 0; i < 100; i++)
                 Task.Run(() => escreve());
@@ -28,15 +31,14 @@ namespace RichConsoleWriter
                 await Task.Delay(intRandom);
                 lock (ConsoleWriter.ConsoleWriterLock)
                 {
-                    //ConsoleWriter.WriteLine("");
                     ConsoleWriter.WriteLine($"[{beingPrinted++.ToString("0000")}]Obra - Totais Calculados", ConsoleColor.White);
 
                     ConsoleWriter.Write("      Equipa..: ", ConsoleColor.DarkGray, true)
-                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
-                            .Write("      Produtos: ", ConsoleColor.DarkGray, true)
-                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
-                            .Write("      Mão Obra: ", ConsoleColor.DarkGray, true)
-                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
+                                 .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
+                                 .Write("      Produtos: ", ConsoleColor.DarkGray, true)
+                                 .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
+                                 .Write("      Mão Obra: ", ConsoleColor.DarkGray, true)
+                                 .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
                 }
             }
         }
