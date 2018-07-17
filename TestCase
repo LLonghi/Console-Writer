@@ -31,9 +31,8 @@ namespace RichConsoleWriter
                 await Task.Delay(intRandom);
                 lock (ConsoleWriter.ConsoleWriterLock)
                 {
-                    ConsoleWriter.WriteLine($"[{beingPrinted++.ToString("0000")}]Obra - Totais Calculados", ConsoleColor.White);
-
-                    ConsoleWriter.Write("      Equipa..: ", ConsoleColor.DarkGray, true)
+                    ConsoleWriter.WriteLine($"[{beingPrinted++.ToString("0000")}]Obra - Totais Calculados", ConsoleColor.White)
+                                 .Write("      Equipa..: ", ConsoleColor.DarkGray, true)
                                  .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
                                  .Write("      Produtos: ", ConsoleColor.DarkGray, true)
                                  .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
