@@ -30,15 +30,13 @@ namespace RichConsoleWriter
                 {
                     //ConsoleWriter.WriteLine("");
                     ConsoleWriter.WriteLine($"[{beingPrinted++.ToString("0000")}]Obra - Totais Calculados", ConsoleColor.White);
-                    ConsoleWriter.Write("      Equipa..: ", ConsoleColor.DarkGray, true);
-                    negativo = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
-                    ConsoleWriter.Write("      Produtos: ", ConsoleColor.DarkGray, true);
-                    negativo = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
-                    ConsoleWriter.Write("      Mão Obra: ", ConsoleColor.DarkGray, true);
-                    negativo = random.Next(1, 3);
-                    ConsoleWriter.WriteLine($"{(negativo % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
+
+                    ConsoleWriter.Write("      Equipa..: ", ConsoleColor.DarkGray, true)
+                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
+                            .Write("      Produtos: ", ConsoleColor.DarkGray, true)
+                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false)
+                            .Write("      Mão Obra: ", ConsoleColor.DarkGray, true)
+                            .WLine($"{((negativo = random.Next(1, 3)) % 2 == 0 ? " " : "-")}{random.Next(1, 9999)},00", (negativo % 2 == 0 ? ConsoleColor.DarkGreen : ConsoleColor.DarkRed), false);
                 }
             }
         }
