@@ -1,2 +1,2 @@
 # Console-Writer
-Rich Console Writer for multiple async task logging 
+C# Rich Console Writer for multiple async task logging 
